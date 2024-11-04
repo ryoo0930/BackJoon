@@ -24,6 +24,5 @@ int main(void) {
 		printf("%d\n", NUM[i]);
 	}
 
-
 	return 0;
 }
