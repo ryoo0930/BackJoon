@@ -1,5 +1,5 @@
 <p>하루에 한 문제 이상. 백준 문제를 푼다. </p>
-<p>Since. 24.10.09 ~ 
+<p>Since. 24.10.22 ~ 
 
 <p>https://solved.ac/profile/ryoo0930 </p>
 <br>
