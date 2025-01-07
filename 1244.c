@@ -9,8 +9,8 @@ int main(void) {
     int switchArrSize = 0;
     scanf("%d", &switchArrSize);
 
-    int* switchArr = (int*)malloc(sizeof(int) * (switchArrSize));
-    for (int i = 0; i < switchArrSize; i++) { scanf("%d", &switchArr[i]); }
+    int* switchArr = (int*)malloc(sizeof(int) * (switchArrSize + 1));
+    for (int i = 1; i <= switchArrSize; i++) { scanf("%d", &switchArr[i]); }
 
     int testCase = 0;
     scanf("%d", &testCase);
@@ -22,9 +22,9 @@ int main(void) {
         else if (gender == 2) { femaleFunction(switchArr, switchArrSize, number); }
     }
 
-    for (int i = 0; i < switchArrSize; i++) {
+    for (int i = 1, index = 0; i <= switchArrSize; i++, index++) {
         printf("%d ", switchArr[i]);
-        if ((i + 1) % 20 == 0) { printf("\n"); }
+        if (i % 20 == 0) { printf("\n"); }
     }
 
     free(switchArr);
@@ -32,22 +32,20 @@ int main(void) {
 }
 
 void maleFunction(int* arr, int size, int number) {
-    for (int i = 1; number * i <= size; i++) { arr[number * i - 1] = 1 - arr[number * i - 1]; }
+    for (int i = 1; number * i <= size; i++) {
+        arr[number * i] = 1 - arr[number * i];
+    }
 }
 
 void femaleFunction(int* arr, int size, int number) {
+    arr[number] = 1 - arr[number];
+
     int range = 1;
-    arr[number - 1] = 1 - arr[number - 1]; // 받은 번호의 스위치 상태 먼저 변경
-
     while (1) {
-        int left = number - range;
-        int right = number + range;
-
-        if (left < 1 || right > size) { break; }
-
-        if (arr[left - 1] == arr[right - 1]) {
-            arr[left - 1] = 1 - arr[left - 1];
-            arr[right - 1] = 1 - arr[right - 1];
+        if (number - range == 0 || number + range == size + 1) { break; }
+        if (arr[number - range] == arr[number + range]) {
+            arr[number - range] = 1 - arr[number - range];
+            arr[number + range] = 1 - arr[number + range];
         }
         else { break; }
         range++;
