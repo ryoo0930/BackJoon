@@ -1,4 +1,4 @@
-<p>생각한 것은 구현할 수 있어야 합니다. </p>
+<p>생각한 것을 구현할 수 있어야 한다. </p>
 <p>Since. 24.10.22 ~ 
 
 <p>https://solved.ac/profile/ryoo0930 </p>
