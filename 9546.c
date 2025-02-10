@@ -5,7 +5,6 @@
 int main() {
     int testCase = 0;
     scanf("%d", &testCase);
-
     while (testCase--) {
         int K = 0;
         scanf("%d", &K);
