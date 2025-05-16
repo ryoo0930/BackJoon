@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
 	unsigned long long fileSize = 0;
 	int maxBit = 0;
